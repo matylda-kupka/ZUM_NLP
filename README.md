@@ -18,4 +18,14 @@ The CNN model consists of the following layers:
 - Dense layer, with 64 neurons and ReLU actiavtion function. This layer is intended to capture global patterns in the data.
 - output layer with softmax function, as this problem deals with multi-class classification
 
+Second model is LSTM model, which consists of the following:
+- Embedding layer, used to convert integer-encoded vocabulary indices into dense vectors of fixed size
+- LSTM layer. LSTM is a type of recurrent neural network (RNN) that is well-suited for sequence data like text. The parameter `128` specifies the number of LSTM units (or memory cells) in the layer.
+- Dense layer, with activation softmax
+
+ Both models are compiled with the following parameters:
+- optimizer='adam': Adam is an optimization algorithm that adapts the learning rate during training
+- loss='sparse_categorical_crossentropy': This is the loss function used for multi-class classification problems
+- metrics=['accuracy']:accuracy will be monitored during training
+
 In order to use the file, simply replace the "test_sententce" at the end of the code with your sentence and run the code. Result will be the prediction of the sentiment, as per above mentioned 5 classes.
